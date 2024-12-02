@@ -1,4 +1,3 @@
-/* Global styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -9,8 +8,6 @@ body {
     margin: 0;
     transition: background-color 0.3s, color 0.3s;
 }
-
-
 
 /* Spinner styles */
 .spinner {
@@ -26,26 +23,24 @@ body {
     animation: spin 1s linear infinite;
 }
 
-/* Spinner animation */
 @keyframes spin {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
     100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* erroe msg */
-#error-message{
-    display: none; 
-    color: red; 
+/* Error message */
+#error-message {
+    display: none;
+    color: red;
     text-align: center;
 }
 
-/* Light theme */
+/* Light and Dark theme */
 body.light {
     background-color: #f4f4f4;
     color: #333;
 }
 
-/* Dark theme */
 body.dark {
     background-color: #333;
     color: #f4f4f4;
@@ -107,6 +102,7 @@ body.dark {
     display: none;
 }
 
+/* Delete button for image */
 .delete-btn {
     background-color: #e74c3c; 
     color: white;     
@@ -147,10 +143,7 @@ body.dark {
     margin: 5px 0;
 }
 
-.user-card strong {
-    font-weight: bold;
-}
-
+/* Edit button */
 .edit-btn {
     background-color: transparent;
     color: #007BFF;
@@ -164,6 +157,7 @@ body.dark {
     color: #0056b3;
 }
 
+/* Save and cancel buttons */
 .save-cancel-buttons {
     display: none;
 }
@@ -193,6 +187,7 @@ body.dark {
     opacity: 0.8;
 }
 
+/* Input text styling */
 input[type="text"] {
     font-size: 1.1em;
     padding: 8px;
@@ -207,39 +202,8 @@ input[type="text"]:focus {
     border-color: #007BFF;
 }
 
-/* Style for invalid email */
-.email.invalid {
-    color: red;
-    font-style: italic;
-  }
-  
-  /* Tooltip styling for the full email */
-  .email {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
-  .email:hover {
-    color: #0056b3;
-  }
-  
-  .email[title]:hover::after {
-    content: attr(title);
-    position: absolute;
-    background-color: #333;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 12px;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    z-index: 10;
-  }
-  
-  /* read more */
-  .read-more-btn {
+ /* read more */
+ .read-more-btn {
     background-color: transparent;
     color: #007BFF;
     border: none;
@@ -251,6 +215,32 @@ input[type="text"]:focus {
 
 .read-more-btn:hover {
     color: #0056b3;
+}
+
+/* Style for invalid email */
+.email.invalid {
+    color: red;
+    font-style: italic;
+}
+
+/* Tooltip styling for the full email */
+.email {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.email[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
 
 /* Follow/Unfollow Button Styling */
@@ -271,11 +261,11 @@ input[type="text"]:focus {
 }
 
 .follow-btn.unfollow {
-    background-color: #dc3545; /* Red for Unfollow */
+    background-color: #dc3545;
 }
 
 .follow-btn.unfollow:hover {
-    background-color: #c82333; /* Darker red for Unfollow */
+    background-color: #c82333;
 }
 
 /* Delete profile button styling */
@@ -290,26 +280,11 @@ input[type="text"]:focus {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin-top: 10px;
-  }
-  
-  .delete-profile-btn:hover {
-    background-color: #c0392b;
-    transform: scale(1.05);
-  }
-  
-
-/* Light mode card */
-body.light .user-card {
-    background-color: #fff;
-    color: #333;
-    border-color: #ccc;
 }
 
-/* Dark mode card */
-body.dark .user-card {
-    background-color: #444;
-    color: #f4f4f4;
-    border-color: #666;
+.delete-profile-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
 }
 
 /* Toggle switch styling */
@@ -357,4 +332,17 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(14px);
+}
+
+/* Light and dark mode adjustments for user card */
+body.light .user-card {
+    background-color: #fff;
+    color: #333;
+    border-color: #ccc;
+}
+
+body.dark .user-card {
+    background-color: #444;
+    color: #f4f4f4;
+    border-color: #666;
 }

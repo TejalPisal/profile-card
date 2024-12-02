@@ -6,14 +6,14 @@ window.addEventListener('DOMContentLoaded', () => {
     const errorMessage = document.getElementById('error-message');
   
     // Initially hide the spinner and error message
-  loadingSpinner.style.display = 'none';
-  errorMessage.classList.add('none');
+    loadingSpinner.style.display = 'none';
+    errorMessage.classList.add('none');
   
     // Check if theme preference is stored in localStorage
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       document.body.classList.add(savedTheme);
-      themeToggle.checked = savedTheme === 'dark'; // Set the toggle based on saved theme
+      themeToggle.checked = savedTheme === 'dark';
     }
   
     // Event listener for the theme toggle
@@ -21,11 +21,11 @@ window.addEventListener('DOMContentLoaded', () => {
       if (themeToggle.checked) {
         document.body.classList.add('dark');
         document.body.classList.remove('light');
-        localStorage.setItem('theme', 'dark'); // Save the theme preference
+        localStorage.setItem('theme', 'dark');
       } else {
         document.body.classList.add('light');
         document.body.classList.remove('dark');
-        localStorage.setItem('theme', 'light'); // Save the theme preference
+        localStorage.setItem('theme', 'light');
       }
     });
   
@@ -44,17 +44,15 @@ window.addEventListener('DOMContentLoaded', () => {
   
           // Use default image if profile picture is missing or empty
           const profilePicture = user.profilePicture || defaultImage;
-
-          
   
           // Email validation and truncation logic
           let email = user.email;
           const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
           let emailValidationMessage = '';
-  
+          
           if (!emailRegex.test(email)) {
             emailValidationMessage = 'Invalid email format';
-            email = 'Invalid email'; // You can change this to something else if you prefer
+            email = 'Invalid email';
           } else if (email.length > 30) {
             email = email.slice(0, 30) + '...';
           }
@@ -97,12 +95,10 @@ window.addEventListener('DOMContentLoaded', () => {
             const isFollowing = followBtn.textContent === 'Unfollow';
   
             if (isFollowing) {
-              // Unfollow logic
               followBtn.textContent = 'Follow';
               followBtn.classList.remove('unfollow');
               followersCount.textContent = parseInt(followersCount.textContent) - 1;
             } else {
-              // Follow logic
               followBtn.textContent = 'Unfollow';
               followBtn.classList.add('unfollow');
               followersCount.textContent = parseInt(followersCount.textContent) + 1;
@@ -110,48 +106,42 @@ window.addEventListener('DOMContentLoaded', () => {
           });
   
           // Handle Edit Name button click
-            const editBtn = userCard.querySelector(`#edit-btn-${user.id}`);
-            const userName = userCard.querySelector(`#user-name-${user.id}`);
-            const saveBtn = userCard.querySelector(`#save-btn-${user.id}`);
-            const cancelBtn = userCard.querySelector(`#cancel-btn-${user.id}`);
-            const saveCancelButtons = userCard.querySelector(`#save-cancel-buttons-${user.id}`);
-
-            // Store the original name in a data attribute
-            userName.setAttribute('data-original-name', userName.textContent);
-
-            editBtn.addEventListener('click', () => {
-            // Enable input for editing
+          const editBtn = userCard.querySelector(`#edit-btn-${user.id}`);
+          const userName = userCard.querySelector(`#user-name-${user.id}`);
+          const saveBtn = userCard.querySelector(`#save-btn-${user.id}`);
+          const cancelBtn = userCard.querySelector(`#cancel-btn-${user.id}`);
+          const saveCancelButtons = userCard.querySelector(`#save-cancel-buttons-${user.id}`);
+  
+          userName.setAttribute('data-original-name', userName.textContent);
+  
+          editBtn.addEventListener('click', () => {
             const input = document.createElement('input');
             input.type = 'text';
             input.value = userName.textContent;
             userName.innerHTML = '';
             userName.appendChild(input);
-
-            // Show Save and Cancel buttons
+  
             saveCancelButtons.style.display = 'block';
             editBtn.style.display = 'none';
-            });
-
-            // Handle Save button click
-            saveBtn.addEventListener('click', () => {
+          });
+  
+          // Handle Save button click
+          saveBtn.addEventListener('click', () => {
             const newName = userName.querySelector('input').value;
             if (newName.trim() !== '') {
-                userName.textContent = newName;
-                // Update the data attribute to the new name
-                userName.setAttribute('data-original-name', newName);
-                saveCancelButtons.style.display = 'none';
-                editBtn.style.display = 'inline-block';
+              userName.textContent = newName;
+              userName.setAttribute('data-original-name', newName);
+              saveCancelButtons.style.display = 'none';
+              editBtn.style.display = 'inline-block';
             }
-            });
-
-            // Handle Cancel button click
-            cancelBtn.addEventListener('click', () => {
-            // Revert to the last saved name from the data attribute
+          });
+  
+          // Handle Cancel button click
+          cancelBtn.addEventListener('click', () => {
             userName.textContent = userName.getAttribute('data-original-name');
             saveCancelButtons.style.display = 'none';
             editBtn.style.display = 'inline-block';
-            });
-
+          });
   
           // Handle Read More/Read Less functionality
           const readMoreBtn = userCard.querySelector(`#read-more-${user.id}`);
@@ -196,7 +186,7 @@ window.addEventListener('DOMContentLoaded', () => {
             uploadInput.value = '';
           });
   
-          // Handle the delete profile button click with confirmation
+          // Handle Delete Profile button with confirmation
           const deleteProfileBtn = userCard.querySelector(`#delete-profile-btn-${user.id}`);
           deleteProfileBtn.addEventListener('click', () => {
             const confirmation = confirm("Are you sure you want to delete this profile?");
@@ -212,10 +202,9 @@ window.addEventListener('DOMContentLoaded', () => {
         loadingSpinner.style.display = 'none';
       })
       .catch(error => {
-        // Hide spinner and display error message
         loadingSpinner.style.display = 'none';
-        errorMessage.textContent = 'Failed to load user data'; // Customize the error message
-        errorMessage.style.display = 'block'; // Display the error message
+        errorMessage.textContent = 'Failed to load user data'; 
+        errorMessage.style.display = 'block'; 
       });
   });
   
