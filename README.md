@@ -1,18 +1,31 @@
-# Dynamic Profile Card
+#  Dynamic Profile Card
 
-A dynamic profile card component where users can view and edit profile details like name, upload and delete image. The component also allows users to toggle a follow/unfollow state and shows a read-more feature for bio text.
+This is a user profile card is built using **HTML**, **CSS**, and **JavaScript**. It fetches user data from an external API and dynamically displays user profiles. This includes the following features:
+- Dynamic loading of user profiles with name, email, bio, and profile pictures.
+- Light/Dark mode toggle.
+- Profile image upload and deletion.
+- Email validation and truncation.
+- "Read More" functionality for bio.
 
 ## Features
 
-- View user profile details: Profile Picture, Name, Email, Bio, No. of Followers
-- Edit user details like Name, Profile picture
-- Toggle between Follow/Unfollow state
-- Read more functionality for bio text
-- Delete profile button for removing the profile.
-- Support both light and dark modes with a toggle switch. 
+- **Loading Spinner**: A loading spinner appears while fetching user data.
+- **Error Handling**: Displays an error message if there is an issue fetching the data.
+- **Dark/Light Mode**: Users can toggle between dark and light themes, with their preference saved in `localStorage`.
+- **Profile Image Management**: Users can upload new profile pictures or delete them.
+- **Email Validation**: Ensures that emails are in valid format, with long emails being truncated for display.
+- **Bio Truncation**: Long bios are truncated with a "Read More" button to reveal the full content.
 
 ## Technologies Used
 
-- **HTML** - Used for the structure of the page.
-- **CSS** - Used for styling the profile card and making it responsive.
-- **JavaScript** - Used for dynamic functionality like editing details, toggling follow state, and showing/hiding bio text.
+- **HTML**
+- **CSS**
+- **JavaScript**
+- **External API** for user data: `https://mocki.io/v1/b3754cc5-c341-4459-9fa1-baed8f562f21`
+
+## Setup Instructions
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/TejalPisal/profile-card.git
+   cd profile-card
