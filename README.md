@@ -21,7 +21,7 @@ This is a user profile card is built using **HTML**, **CSS**, and **JavaScript**
 - **HTML**
 - **CSS**
 - **JavaScript**
-- **External API** for user data: `https://mocki.io/v1/b3754cc5-c341-4459-9fa1-baed8f562f21`
+- **External API** for user data: `[https://mocki.io/v1/b3754cc5-c341-4459-9fa1-baed8f562f21](https://mocki.io/v1/b3754cc5-c341-4459-9fa1-baed8f562f21)`
 
 ## Setup Instructions
 
