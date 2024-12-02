@@ -23,4 +23,4 @@ To use this project locally, follow the steps below:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/dynamic-profile-card.git
+   git clone https://github.com/TejalPisal/dynamic-profile-card.git
